@@ -1,11 +1,12 @@
 import React from "react";
-import { Layout, PageHeader } from "antd";
+import NavBar from "../components/NavBar";
+import { Layout } from "antd";
 const { Content } = Layout;
 
 const LandingPage = () => {
   return (
     <Layout>
-      <PageHeader title="Name of our Application" />
+      <NavBar />
       <Content className="mainContent">
         <h2>hi</h2>
       </Content>
