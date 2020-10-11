@@ -10,6 +10,7 @@ import CompanyList from "./screens/CompanyList";
 import CompanyDetail from "./screens/CompanyDetail";
 import Advice from "./screens/Advice";
 import Profile from "./screens/Profile";
+import AddAdvice from "./screens/AddAdvice";
 import "./App.css";
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path="/companies/:id" exact component={CompanyDetail} />
         <Route path="/advice" exact component={Advice} />
         <Route path="/profile" exact component={Profile} />
+        <Route path="/add-advice" exact component={AddAdvice} />
         <Redirect to="/" />
       </Switch>
     </Router>
