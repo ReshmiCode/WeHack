@@ -25,10 +25,7 @@ const AddAdvice = () => {
 
   return (
     <Layout>
-      <PageHeader
-        title="Name of our Application"
-        onBack={() => window.history.back()}
-      />
+      <PageHeader title="EMPOWER" onBack={() => window.history.back()} />
       <Content className="mainContent">
         <h1 style={{ margin: 0, padding: 20, textAlign: "center" }}>
           Enter Advice for other Women Entrepreuners
