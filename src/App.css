@@ -1,4 +1,10 @@
+@import '~antd/dist/antd.css';
+
 .mainContent {
   background-color: white;
   padding: 50px;
+}
+
+.ant-page-header {
+  background-color: #459bd1;
 }
