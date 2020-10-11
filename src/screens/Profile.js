@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import { Layout, Input, Button } from "antd";
+import { useHistory } from "react-router-dom";
 import NavBar from "../components/NavBar";
 import db from "../components/firebase";
 const { Content } = Layout;
 const { TextArea } = Input;
 
 const Profile = () => {
+  const history = useHistory();
+
   let [enteredTitle, setEnteredTitle] = useState("");
   let [enteredImage, setEnteredImage] = useState("");
   let [enteredDescription, setEnteredDescription] = useState("");
@@ -30,6 +33,7 @@ const Profile = () => {
       .catch(function (error) {
         console.error("Error adding document: ", error);
       });
+    history.push("/companies");
   }
 
   return (
