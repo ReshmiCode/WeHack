@@ -68,7 +68,11 @@ const Advice = () => {
           such as how to go from idea to business or inspiring stories.
         </p>
         <Collapse accordion>
-          <Panel header="Boss Habits Every Entrepreneur Should Have" key="1">
+          <Panel
+            header="Boss Habits Every Entrepreneur Should Have"
+            key="1"
+            style={{ backgroundColor: "#d8cae4" }}
+          >
             <iframe
               width="560"
               height="315"
@@ -82,7 +86,11 @@ const Advice = () => {
               about some habits to help you stay productive!
             </p>
           </Panel>
-          <Panel header="How To Go From Idea to Product to Business" key="2">
+          <Panel
+            header="How To Go From Idea to Product to Business"
+            key="2"
+            style={{ backgroundColor: "#d8cae4" }}
+          >
             <iframe
               width="560"
               height="315"
@@ -103,7 +111,11 @@ const Advice = () => {
               <img src="https://image.slidesharecdn.com/womenentrepreneurs2010-131028120718-phpapp02/95/women-entrepreneurs-7-638.jpg?cb=1382962508" />
             </a>
           </Panel>
-          <Panel header="Women Entrepreneurs Share Their Stories" key="3">
+          <Panel
+            header="Women Entrepreneurs Share Their Stories"
+            key="3"
+            style={{ backgroundColor: "#d8cae4" }}
+          >
             <iframe
               width="560"
               height="315"
@@ -117,7 +129,11 @@ const Advice = () => {
               their origins and see if you notice any similaries.
             </p>
           </Panel>
-          <Panel header="Steps + Resources To Build a Company" key="4">
+          <Panel
+            header="Steps + Resources To Build a Company"
+            key="4"
+            style={{ backgroundColor: "#d8cae4" }}
+          >
             <a>
               Click here to access our business timeline tracker where you can
               see and fill out a more detailed version to track your own
