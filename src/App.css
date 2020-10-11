@@ -8,3 +8,20 @@
 .ant-page-header {
   background-color: #459bd1;
 }
+
+.flexRow {
+  display: flex;
+  flex-direction: row;
+}
+
+.flexRow a:active,
+.flexRow a.active {
+  border-bottom: 2px solid #3d2fa8;
+  color: #5b51a6;
+}
+
+.navLink {
+  margin-right: 30px;
+  font-size: 20px;
+  color: white;
+}
