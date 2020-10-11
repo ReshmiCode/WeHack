@@ -75,6 +75,7 @@ const CompanyList = () => {
                 border: "1px solid #000",
                 borderRadius: "19px",
                 padding: "15px",
+                minHeight: "260px",
               }}
               key={item.title}
               actions={[
