@@ -1,16 +1,27 @@
 import React from "react";
-import { Layout, PageHeader } from "antd";
+import {
+  BrowserRouter as Router,
+  Route,
+  Redirect,
+  Switch,
+} from "react-router-dom";
+import LandingPage from "./screens/LandingPage";
+import CompanyList from "./screens/CompanyList";
+import CompanyDetail from "./screens/CompanyDetail";
+import Advice from "./screens/Advice";
 import "./App.css";
-const { Content } = Layout;
 
 function App() {
   return (
-    <Layout>
-      <PageHeader title="Name of our Application" />
-      <Content className="mainContent">
-        <h2>hi</h2>
-      </Content>
-    </Layout>
+    <Router>
+      <Switch>
+        <Route path="/" exact component={LandingPage} />
+        <Route path="/companies" exact component={CompanyList} />
+        <Route path="/company/:id" exact component={CompanyDetail} />
+        <Route path="/advice" exact component={Advice} />
+        <Redirect to="/" />
+      </Switch>
+    </Router>
   );
 }
 
