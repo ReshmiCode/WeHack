@@ -52,7 +52,7 @@ const CompanyList = () => {
                 border: "1px solid #000",
                 borderRadius: "19px",
                 padding: "15px",
-                minHeight: "245px",
+                minHeight: "270px",
               }}
               key={item.title}
               actions={[Tags(item.tags)]}
