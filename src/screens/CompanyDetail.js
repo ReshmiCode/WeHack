@@ -17,7 +17,7 @@ const CompanyDetail = () => {
   return (
     <Layout>
       <PageHeader title="EMPOWER" onBack={() => window.history.back()} />
-      <Content className="mainContent">
+      <Content className="mainContent" style={{ height: "969px" }}>
         <img
           src="https://vignette.wikia.nocookie.net/disney/images/d/d2/Profile_-_Vanessa_Doofenshmirtz.jpg/revision/latest?cb=20200812210556"
           height="100"

@@ -36,7 +36,7 @@ const LandingPage = () => {
           <NavLink exact className="btn btn-1" to="/companies">
             Log In
           </NavLink>
-          <p style={{ marginTop: "35px" }}>
+          <p style={{ marginTop: "35px", fontSize: "25px" }}>
             Made with 💖 by Medha Jonnada, Megan Tran, Reshmi Ranjith, and
             Saloni Shivdasani
           </p>
