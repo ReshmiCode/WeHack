@@ -85,21 +85,24 @@ const Profile = () => {
           value={enteredImage}
           onChange={(event) => setEnteredImage(event.target.value)}
         />
-        <h3>Enter Description</h3>
+        <h3>Enter Tagline</h3>
         <TextArea
           rows="10"
           style={{ width: "50%" }}
           value={enteredDescription}
           onChange={(event) => setEnteredDescription(event.target.value)}
         />
-        <h3>Enter Content</h3>
+        <h3>Enter Short Description</h3>
         <TextArea
           rows="10"
           style={{ width: "50%" }}
           value={enteredContent}
           onChange={(event) => setEnteredContent(event.target.value)}
         />
-        <h3>Enter Tags (seperated by commas)</h3>
+        <h3>
+          Enter Tags (seperated by commas) Choose from money, mentorship, users,
+          distribution, materials, ideas
+        </h3>
         <TextArea
           rows="2"
           style={{ width: "50%" }}

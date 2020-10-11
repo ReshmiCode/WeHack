@@ -6,28 +6,6 @@ import NavBar from "../components/NavBar";
 import db from "../components/firebase";
 const { Content } = Layout;
 
-const listData = [];
-
-for (let i = 0; i < 9; i++) {
-  listData.push({
-    title: `ant design part ${i}`,
-    avatar: "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",
-    description:
-      "Ant Design, a design language for background applications, is refined by Ant UED Team.",
-    content:
-      "We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.",
-    tags: ["money", "mentorship"],
-    id: i,
-  });
-}
-
-const IconText = ({ icon, text }) => (
-  <Space>
-    {React.createElement(icon)}
-    {text}
-  </Space>
-);
-
 const Tags = (tags) => {
   return tags.map((val) => {
     if (val === "money") return <Tag color="green">Funding</Tag>;
@@ -78,19 +56,7 @@ const CompanyList = () => {
                 minHeight: "260px",
               }}
               key={item.title}
-              actions={[
-                <IconText
-                  icon={StarOutlined}
-                  text="156"
-                  key="list-vertical-star-o"
-                />,
-                <IconText
-                  icon={MessageOutlined}
-                  text="2"
-                  key="list-vertical-message"
-                />,
-                Tags(item.tags),
-              ]}
+              actions={[Tags(item.tags)]}
             >
               <List.Item.Meta
                 avatar={<Avatar size={64} src={item.avatar} />}
