@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import NavBar from "../components/NavBar";
-import { Layout, Button, List, Collapse } from "antd";
+import { Layout, Button, List, Collapse, Timeline } from "antd";
 import { Link } from "react-router-dom";
 import db from "../components/firebase";
 const { Panel } = Collapse;
@@ -32,7 +32,7 @@ const Advice = () => {
         <h1 style={{ margin: 0, padding: 20, textAlign: "center" }}>
           Advice from Women Entrepreuners
         </h1>
-        <Button>
+        <Button type="primary">
           <Link to="/add-advice" style={{ padding: 20, margin: 20 }}>
             Add Advice Here
           </Link>
@@ -116,6 +116,50 @@ const Advice = () => {
               In this video, five women share their stories. Reflect on some of
               their origins and see if you notice any similaries.
             </p>
+          </Panel>
+          <Panel header="Steps + Resources To Build a Company" key="4">
+            <a>
+              Click here to access our business timeline tracker where you can
+              see and fill out a more detailed version to track your own
+              progress!
+            </a>
+            <Timeline style={{ marginTop: "20px" }}>
+              <Timeline.Item color="green">
+                <h3>Do Your Research</h3>
+                <p>
+                  You've already started this step by coming here! Take this
+                  time to ....
+                </p>
+              </Timeline.Item>
+              <Timeline.Item>
+                <h3>Make a Plan</h3>
+                <p>It's time to figure out a game plan!</p>
+                <h4>User Additions:</h4>
+                <p>
+                  Sarah Lang said she found it great to talk to potential
+                  customers to get their take on her idea.
+                </p>
+              </Timeline.Item>
+              <Timeline.Item>
+                <h3>Figure out Finances</h3>
+              </Timeline.Item>
+              <Timeline.Item>
+                <h3>Choose a Business Structure</h3>
+              </Timeline.Item>
+              <Timeline.Item>
+                <h3>Choose and Register a Business Name</h3>
+              </Timeline.Item>
+              <Timeline.Item>
+                <h3>Get Licenses and Permits</h3>
+              </Timeline.Item>
+              <Timeline.Item>
+                <h3>Get Your Team Ready</h3>
+              </Timeline.Item>
+              <Timeline.Item>
+                <h3>Promote Your Small Business</h3>
+              </Timeline.Item>
+            </Timeline>
+            <Button type="primary">Add a Note to a Step Above</Button>
           </Panel>
         </Collapse>
       </Content>
