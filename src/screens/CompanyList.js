@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { Layout, List, Avatar, Tag, Space } from "antd";
 import { MessageOutlined, StarOutlined } from "@ant-design/icons";
 import NavBar from "../components/NavBar";
+import db from "../components/firebase";
 const { Content } = Layout;
 
 const listData = [];
+
 for (let i = 0; i < 9; i++) {
   listData.push({
     title: `ant design part ${i}`,
@@ -38,6 +40,25 @@ const Tags = (tags) => {
 };
 
 const CompanyList = () => {
+  let [companies, setCompanies] = useState([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      let companyArray = [];
+      await db
+        .collection("company")
+        .get()
+        .then((querySnapshot) => {
+          querySnapshot.forEach((doc) => {
+            companyArray.push(doc.data().company);
+          });
+        });
+      console.log(companyArray);
+      setCompanies(companyArray);
+    }
+    fetchData();
+  }, []);
+
   return (
     <Layout>
       <NavBar />
@@ -46,7 +67,7 @@ const CompanyList = () => {
         <List
           grid={{ gutter: 16, column: 2 }}
           itemLayout="vertical"
-          dataSource={listData}
+          dataSource={companies}
           renderItem={(item) => (
             <List.Item
               style={{
