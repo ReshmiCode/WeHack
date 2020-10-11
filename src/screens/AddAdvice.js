@@ -33,8 +33,8 @@ const AddAdvice = () => {
         </h1>
         <div style={{ textAlign: "center" }}>
           <TextArea
-            cols="2"
             rows="10"
+            style={{ width: "50%" }}
             value={enteredAdvice}
             onChange={(event) => setEnteredAdvice(event.target.value)}
           />
