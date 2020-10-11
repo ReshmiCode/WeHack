@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { Layout, Input, Button } from "antd";
+import { Layout, Input, Button, Steps, message } from "antd";
 import { useHistory } from "react-router-dom";
 import NavBar from "../components/NavBar";
 import db from "../components/firebase";
+const { Step } = Steps;
 const { Content } = Layout;
 const { TextArea } = Input;
 
@@ -14,6 +15,15 @@ const Profile = () => {
   let [enteredDescription, setEnteredDescription] = useState("");
   let [enteredContent, setEnteredContent] = useState("");
   let [enteredTags, setEnteredTags] = useState("");
+  const [number, setNumber] = useState(0);
+
+  const next = () => {
+    setNumber(number + 1);
+  };
+
+  const prev = () => {
+    setNumber(number - 1);
+  };
 
   function AddCompany() {
     const company = {
@@ -34,13 +44,32 @@ const Profile = () => {
       .catch(function (error) {
         console.error("Error adding document: ", error);
       });
-    history.push("/companies");
+    //history.push("/companies");
+    message.success("Saved company details!");
   }
 
-  return (
-    <Layout>
-      <NavBar />
-      <Content className="mainContent" style={{ textAlign: "center" }}>
+  const steps = [
+    {
+      title: "Company Details",
+      content: "First-content",
+    },
+    {
+      title: "Product Details",
+      content: "Second-content",
+    },
+    {
+      title: "Find Peers",
+      content: "Third-content",
+    },
+    {
+      title: "Share Advice",
+      content: "Last-content",
+    },
+  ];
+
+  const Form = () => {
+    return (
+      <>
         <h1>Enter Company Details</h1>
         <h3>Enter Company Title</h3>
         <Input
@@ -84,6 +113,51 @@ const Profile = () => {
         <Button type="primary" onClick={AddCompany}>
           Submit Company
         </Button>
+      </>
+    );
+  };
+
+  const genContent = () => {
+    switch (number) {
+      case 0:
+        return Form();
+      default:
+        return steps[number].content;
+    }
+  };
+
+  return (
+    <Layout>
+      <NavBar />
+      <Content className="mainContent" style={{ textAlign: "center" }}>
+        <>
+          <Steps current={number}>
+            {steps.map((item) => (
+              <Step key={item.title} title={item.title} />
+            ))}
+          </Steps>
+          <div className="steps-content">{genContent()}</div>
+          <div className="steps-action">
+            {number < steps.length - 1 && (
+              <Button type="primary" onClick={() => next()}>
+                Next
+              </Button>
+            )}
+            {number === steps.length - 1 && (
+              <Button
+                type="primary"
+                onClick={() => message.success("Processing complete!")}
+              >
+                Done
+              </Button>
+            )}
+            {number > 0 && (
+              <Button style={{ margin: "0 8px" }} onClick={() => prev()}>
+                Previous
+              </Button>
+            )}
+          </div>
+        </>
       </Content>
     </Layout>
   );

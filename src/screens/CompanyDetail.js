@@ -16,10 +16,7 @@ const Tags = (tags) => {
 const CompanyDetail = () => {
   return (
     <Layout>
-      <PageHeader
-        title="Name of our Application"
-        onBack={() => window.history.back()}
-      />
+      <PageHeader title="EMPOWER" onBack={() => window.history.back()} />
       <Content className="mainContent">
         <img
           src="https://vignette.wikia.nocookie.net/disney/images/d/d2/Profile_-_Vanessa_Doofenshmirtz.jpg/revision/latest?cb=20200812210556"

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import { Layout, List, Avatar, Tag, Space } from "antd";
-import { MessageOutlined, StarOutlined } from "@ant-design/icons";
+import { Layout, List, Avatar, Tag } from "antd";
 import NavBar from "../components/NavBar";
 import db from "../components/firebase";
 const { Content } = Layout;
@@ -52,6 +51,7 @@ const CompanyList = () => {
                 border: "1px solid #000",
                 borderRadius: "19px",
                 padding: "15px",
+                minHeight: "270px",
               }}
               key={item.title}
               actions={[Tags(item.tags)]}
