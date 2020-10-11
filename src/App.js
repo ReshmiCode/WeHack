@@ -1,12 +1,16 @@
 import React from "react";
-import { Button } from "antd";
+import { Layout, PageHeader } from "antd";
 import "./App.css";
+const { Content } = Layout;
 
 function App() {
   return (
-    <div className="App">
-      <Button type="primary">Button</Button>
-    </div>
+    <Layout>
+      <PageHeader title="Name of our Application" />
+      <Content className="mainContent">
+        <h2>hi</h2>
+      </Content>
+    </Layout>
   );
 }
 
