@@ -3,6 +3,7 @@ import NavBar from "../components/NavBar";
 import { Layout, Button, List } from "antd";
 import { Link } from "react-router-dom";
 import db from "../components/firebase";
+import ContentViewer from "../components/ContentViewer";
 const { Content } = Layout;
 
 const Advice = () => {
@@ -59,6 +60,14 @@ const Advice = () => {
             );
           })}
         </div> */}
+        <h1 style={{ marginTop: 20, textAlign: "center" }}>
+          Exclusive Tips and Talks
+        </h1>
+        <p style={{ marginBottom: 10, textAlign: "center" }}>
+          Hear from some of our very successful members! Including workshops
+          such as how to go from idea to business or inspiring stories.
+        </p>
+        <ContentViewer />
       </Content>
     </Layout>
   );
