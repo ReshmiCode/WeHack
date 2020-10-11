@@ -38,3 +38,29 @@
   color: rgba(255, 255, 255, 0.65);
   padding-top: 80px;
 }
+
+.btn {
+  margin: 10px;
+  padding: 20px 30px 20px 30px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+}
+
+.btn:hover {
+  background-position: right center; /* change the direction of the change here */
+}
+
+.btn-1 {
+  background-image: linear-gradient(
+    to right,
+    #9d55e9 0%,
+    #d9abe1 51%,
+    #9d55e9 100%
+  );
+}
