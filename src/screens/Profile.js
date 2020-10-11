@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Layout, Input, Button } from "antd";
 import NavBar from "../components/NavBar";
+import db from "../components/firebase";
 const { Content } = Layout;
 const { TextArea } = Input;
 
@@ -19,17 +20,16 @@ const Profile = () => {
       content: enteredContent,
       tags: enteredTags.split(", "),
     };
-    // db.collection("advice")
-    //   .add({
-    //     advice: enteredAdvice,
-    //   })
-    //   .then(function (docRef) {
-    //     console.log("Document written with ID: ", docRef.id);
-    //   })
-    //   .catch(function (error) {
-    //     console.error("Error adding document: ", error);
-    //   });
-    console.log(company);
+    db.collection("company")
+      .add({
+        company: company,
+      })
+      .then(function (docRef) {
+        console.log("Document written with ID: ", docRef.id);
+      })
+      .catch(function (error) {
+        console.error("Error adding document: ", error);
+      });
   }
 
   return (
