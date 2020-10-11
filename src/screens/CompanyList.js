@@ -31,7 +31,6 @@ const CompanyList = () => {
             companyArray.push(doc.data().company);
           });
         });
-      console.log(companyArray);
       setCompanies(companyArray);
     }
     fetchData();
