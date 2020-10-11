@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { PageHeader } from "antd";
+import { PageHeader, Avatar } from "antd";
+import { UserOutlined } from "@ant-design/icons";
 
 const LandingPage = () => {
   return <PageHeader title="Name of our Application" extra={<NavLinks />} />;
@@ -14,6 +15,9 @@ const NavLinks = () => {
       </NavLink>
       <NavLink exact className="navLink" to="/advice">
         Advice
+      </NavLink>
+      <NavLink exact className="navLink" to="/profile">
+        <Avatar size="large" icon={<UserOutlined />} />
       </NavLink>
     </div>
   );

@@ -9,6 +9,7 @@ import LandingPage from "./screens/LandingPage";
 import CompanyList from "./screens/CompanyList";
 import CompanyDetail from "./screens/CompanyDetail";
 import Advice from "./screens/Advice";
+import Profile from "./screens/Profile";
 import "./App.css";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path="/companies" exact component={CompanyList} />
         <Route path="/companies/:id" exact component={CompanyDetail} />
         <Route path="/advice" exact component={Advice} />
+        <Route path="/profile" exact component={Profile} />
         <Redirect to="/" />
       </Switch>
     </Router>
