@@ -62,7 +62,7 @@ const CompanyList = () => {
   return (
     <Layout>
       <NavBar />
-      <Content className="mainContent">
+      <Content className="mainContent" style={{ textAlign: "center" }}>
         <h2>List of User Companies: </h2>
         <List
           grid={{ gutter: 16, column: 2 }}
@@ -92,13 +92,12 @@ const CompanyList = () => {
               ]}
             >
               <List.Item.Meta
-                avatar={<Avatar src={item.avatar} />}
+                avatar={<Avatar size={64} src={item.avatar} />}
                 title={
                   <NavLink
                     exact
-                    className="navLink"
                     to={`/companies/${item.id}`}
-                    style={{ color: "#000", fontSize: 17 }}
+                    style={{ fontSize: 17 }}
                   >
                     {item.title}
                   </NavLink>

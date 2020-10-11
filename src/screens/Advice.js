@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import NavBar from "../components/NavBar";
-import { Layout, Button, List } from "antd";
+import { Layout, Button, List, Collapse } from "antd";
 import { Link } from "react-router-dom";
 import db from "../components/firebase";
-import ContentViewer from "../components/ContentViewer";
+const { Panel } = Collapse;
 const { Content } = Layout;
 
 const Advice = () => {
@@ -67,7 +67,57 @@ const Advice = () => {
           Hear from some of our very successful members! Including workshops
           such as how to go from idea to business or inspiring stories.
         </p>
-        <ContentViewer />
+        <Collapse accordion>
+          <Panel header="Boss Habits Every Entrepreneur Should Have" key="1">
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/HcmWONC42I4"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+            <p>
+              Getting in the right mindset can make all the difference. Learn
+              about some habits to help you stay productive!
+            </p>
+          </Panel>
+          <Panel header="How To Go From Idea to Product to Business" key="2">
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/6yi20I-AcUg"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+            <p>The key takeaways from this video are:</p>
+            <ul>
+              <li>Write down all the ideas you have</li>
+              <li>Identify market needs</li>
+              <li>Create a product</li>
+              <li>Find Distributors</li>
+            </ul>
+            <p>Click here for the slides from the presentation:</p>
+            <a>
+              <img src="https://image.slidesharecdn.com/womenentrepreneurs2010-131028120718-phpapp02/95/women-entrepreneurs-7-638.jpg?cb=1382962508" />
+            </a>
+          </Panel>
+          <Panel header="Women Entrepreneurs Share Their Stories" key="3">
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/JzHLIXbqlOU"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+            <p>
+              In this video, five women share their stories. Reflect on some of
+              their origins and see if you notice any similaries.
+            </p>
+          </Panel>
+        </Collapse>
       </Content>
     </Layout>
   );

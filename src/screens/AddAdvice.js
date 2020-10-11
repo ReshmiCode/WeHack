@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import NavBar from "../components/NavBar";
-import { Layout, Input, Button } from "antd";
+import { Layout, Input, Button, PageHeader } from "antd";
 import db from "../components/firebase";
 const { Content } = Layout;
 const { TextArea } = Input;
@@ -26,7 +25,10 @@ const AddAdvice = () => {
 
   return (
     <Layout>
-      <NavBar />
+      <PageHeader
+        title="Name of our Application"
+        onBack={() => window.history.back()}
+      />
       <Content className="mainContent">
         <h1 style={{ margin: 0, padding: 20, textAlign: "center" }}>
           Enter Advice for other Women Entrepreuners

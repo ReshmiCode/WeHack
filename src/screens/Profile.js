@@ -22,6 +22,7 @@ const Profile = () => {
       description: enteredDescription,
       content: enteredContent,
       tags: enteredTags.split(", "),
+      id: Math.floor(Math.random() * 1000),
     };
     db.collection("company")
       .add({
