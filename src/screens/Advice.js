@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import NavBar from "../components/NavBar";
-import { Layout } from "antd";
+import { Layout, Button, List } from "antd";
 import { Link } from "react-router-dom";
 import db from "../components/firebase";
 const { Content } = Layout;
@@ -28,13 +28,23 @@ const Advice = () => {
     <Layout>
       <NavBar />
       <Content className="mainContent">
-        <h1 style={{ margin: 0, padding: 20 }}>
+        <h1 style={{ margin: 0, padding: 20, textAlign: "center" }}>
           Advice from Women Entrepreuners
         </h1>
-        <Link to="/add-advice" style={{ padding: 20 }}>
-          Add Advice Here
-        </Link>
-        <div>
+        <Button>
+          <Link to="/add-advice" style={{ padding: 20, margin: 20 }}>
+            Add Advice Here
+          </Link>
+        </Button>
+
+        <List
+          bordered
+          dataSource={advice}
+          renderItem={(item) => <List.Item>{item}</List.Item>}
+          style={{ padding: 20, margin: 20 }}
+        />
+
+        {/* <div>
           {advice.map((value, index) => {
             return (
               <div
@@ -48,7 +58,7 @@ const Advice = () => {
               </div>
             );
           })}
-        </div>
+        </div> */}
       </Content>
     </Layout>
   );
