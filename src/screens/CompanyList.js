@@ -8,7 +8,6 @@ const { Content } = Layout;
 const listData = [];
 for (let i = 0; i < 9; i++) {
   listData.push({
-    href: "https://ant.design",
     title: `ant design part ${i}`,
     avatar: "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",
     description:
@@ -69,19 +68,20 @@ const CompanyList = () => {
                   key="list-vertical-message"
                 />,
                 Tags(item.tags),
-                <NavLink
-                  exact
-                  className="navLink"
-                  to={`/companies/${item.id}`}
-                  style={{ color: "#000", fontSize: 17 }}
-                >
-                  More Details
-                </NavLink>,
               ]}
             >
               <List.Item.Meta
                 avatar={<Avatar src={item.avatar} />}
-                title={<a href={item.href}>{item.title}</a>}
+                title={
+                  <NavLink
+                    exact
+                    className="navLink"
+                    to={`/companies/${item.id}`}
+                    style={{ color: "#000", fontSize: 17 }}
+                  >
+                    {item.title}
+                  </NavLink>
+                }
                 description={item.description}
               />
               {item.content}
